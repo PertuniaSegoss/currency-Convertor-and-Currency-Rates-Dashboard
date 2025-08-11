@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Currency Converter & Rates Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Currency Converter & Rates Dashboard</h1>
+
+    <div class="converter">
+      <input type="number" id="amount" value="1" min="0.01" step="0.01" />
+      
+      <select id="fromCurrency" aria-label="From Currency"></select>
+
+      <span>→</span>
+
+      <select id="toCurrency" aria-label="To Currency"></select>
+    </div>
+
+    <div id="result" class="result"></div>
+
+    <canvas id="rateChart"></canvas>
+
+    <h2>Latest Exchange Rates (Base: <span id="baseCurrencyDisplay"></span>)</h2>
+
+    <input
+      type="text"
+      id="searchRates"
+      placeholder="Search currencies (e.g., USD, EUR)..."
+      aria-label="Search currencies"
+      autocomplete="off"
+      class="search-input"
+    />
+
+    <div class="rates-table-container">
+      <table id="ratesTable" aria-live="polite">
+        <thead>
+          <tr>
+            <th>Currency</th>
+            <th>Rate</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
